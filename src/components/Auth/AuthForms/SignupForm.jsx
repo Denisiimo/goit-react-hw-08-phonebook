@@ -16,7 +16,6 @@ export const SignupForm = () => {
       })
     );
 
-    e.currentTarget.reset();
   };
 
   return (
@@ -34,7 +33,6 @@ export const SignupForm = () => {
           Password:
           <StyledInput autoComplete="current-password" type="password" name="password" />
         </StyledLabel>
-
         <StyledButton type="submit">Register</StyledButton>
       </StyledForm>
     </SectionCenter>

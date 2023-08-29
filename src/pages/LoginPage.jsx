@@ -7,7 +7,7 @@ export const LoginPage = () => {
   const { isLoggedIn, isRefreshing } = useAuth();
   const shouldRedirect = isLoggedIn && !isRefreshing;
 
-  return <SectionCenter>{shouldRedirect ? <Navigate to="/phonebook" replace /> : <LoginForm />}</SectionCenter>;
+  return  <SectionCenter>{shouldRedirect ? <Navigate to="/phonebook" replace /> : <LoginForm />}</SectionCenter>;
 };
 
 export default LoginPage;

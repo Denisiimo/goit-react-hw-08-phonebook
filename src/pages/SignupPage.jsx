@@ -5,7 +5,6 @@ import { useAuth } from 'hooks/useAuth';
 
 export const SignupPage = () => {
   const { isLoggedIn } = useAuth();
-
   return <SectionCenter>{isLoggedIn ? <Navigate to="/phonebook" replace /> : <SignupForm />}</SectionCenter>;
 };
 

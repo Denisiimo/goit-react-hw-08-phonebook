@@ -14,8 +14,6 @@ export const LoginForm = () => {
         password: e.currentTarget.elements.password.value,
       })
     );
-
-    e.currentTarget.reset();
   };
 
   return (

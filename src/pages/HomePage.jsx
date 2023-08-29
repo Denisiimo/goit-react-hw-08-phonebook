@@ -1,5 +1,6 @@
 import { SectionCenter , StyledHeading } from 'components/Common/StyledComponents';
 
+
 export const HomePage = () => {
   return (
     <SectionCenter>

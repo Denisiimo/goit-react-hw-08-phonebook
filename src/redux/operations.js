@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { CONST } from 'redux/constants';
 import axios from 'axios';
+import Notiflix from 'notiflix';
 
 axios.defaults.baseURL = CONST.BASE_URL;
 
@@ -17,10 +18,12 @@ export const registerUser = createAsyncThunk(
       const data = await axios.post('users/signup', authdata).then(r => r.data);
 
       authHeader.set(data.token);
-
+      Notiflix.Notify.success('Successfully signed up')
       return data;
+      
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return Notiflix.Notify.failure('Oops, something went wrong, please check your inputs')
+      // thunkAPI.rejectWithValue(error.message)
     }
   }
 );
@@ -32,10 +35,12 @@ export const loginUser = createAsyncThunk(
       const data = await axios.post('users/login', authdata).then(r => r.data);
 
       authHeader.set(data.token);
-
+      Notiflix.Notify.success('Successfully logged in')
       return data;
+      
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return Notiflix.Notify.failure('Oops, something went wrong, please check your inputs');
+      // thunkAPI.rejectWithValue(error.message)
     }
   }
 );

@@ -21,7 +21,7 @@ export const Phonebook = () => {
   const [isModalOpen, setIsModalOpen] = useState();
   const [isAdding, setIsAdding] = useState(false);
   const [filteredContacts, setFilteredContacts] = useState([]);
-
+  
   useEffect(() => {
     if (contacts?.length > 0) {
       setFilteredContacts(
